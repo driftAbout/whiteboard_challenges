@@ -1,0 +1,25 @@
+{
+  "name": "challenge_02",
+  "version": "0.0.0",
+  "description": "challenge_02 solution to find first and second higest numbers of an array",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "challenge",
+    "array",
+    "Math.max",
+    "set",
+    "tests",
+    "jest"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.1.1"
+  }
+}
