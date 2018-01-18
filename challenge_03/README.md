@@ -29,7 +29,7 @@ js
 
   - Inside the while loop, reassign the car variable to the value of the property
 
-  - If car is falsey, stop the loop.  Car will be null or undefined after aggregating the last vale in the object some point
+  - If car is falsey, stop the loop.  Car will be null or undefined after aggregating the last value in the object.
 
   - Return the aggregated total or null if the total is zero.
   
