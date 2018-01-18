@@ -2,15 +2,14 @@
 
 const solution = module.exports = {};
 
-solution.stats = stats;
-
-function stats(arr){
-  let arrSet = new Set(arr.filter(val => typeof val === 'number')); 
-  if (!arrSet.size) return null;
-  return {first: max(arrSet), second: max(arrSet)};
-  function max(vals){
-    let maxVal = vals.size ? Math.max(...vals): null;
-    vals.delete(maxVal);
-    return maxVal;
+const traverse = (train) => {
+  let car = train;
+  let total = 0;
+  while(car){
+    total += typeof car.value === 'number' ? car.value : 0;
+    car = car.next;
   }
-}
+  return total ? total : null;
+};
+
+solution.traverse = traverse;
