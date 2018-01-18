@@ -1,0 +1,25 @@
+{
+  "name": "challenge_03",
+  "version": "0.0.0",
+  "description": "This is a whiteboard code challenge to console.log the value property of an object of nested objects",
+  "main": "solution.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "while",
+    "nested",
+    "objects",
+    "forshadowing",
+    "binary",
+    "tree"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.1.2"
+  }
+}
