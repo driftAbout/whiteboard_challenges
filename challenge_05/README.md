@@ -15,26 +15,44 @@ Return [15, nxt]
 ```
 
  
-  
   ## Solution
+
+  - Return null if  "hasOwnProperty('value')" is false.  This covers the edge cases of the user passing a string, number, array, object without a value property and an empty object.
+
+  - Traverse the link list passed as an argument.
+    
+    - pass the link list as an array literal to reduce
+
+    - use the reduce accumulator as an array to hold a list of nodes
+
+    - traverse the link list with a while loop inside reduce, pushing the nodes to the accumulator
+
+    - return the middle item from the accumulator
 
 
   
   ## Tests
-
-  - Test 1: Test that the solution.js file exists.
-
-  - Test 2: Test that solution.traverse is a function.
-
-  - Test 3: Test that traverse returns null when the argument is not an object.
+  
+  ### Valid input
+     
+  - Test 1: Test to validate that the solution module exists.
  
-  - Test 4: Test that traverse correctly returns the sum of values.
+  - Test 2: Test to validate that solution.mezzo is a function.
+ 
+  - Test 3: Test to validate that solution.mezzo returns an object with a "value" property.
 
-  - Test 5: Test that traverse returns the sum of values correctly, even when a value is not a number.
+  - Test 4: Test to validate that solution.mezzo returns an object from the middle of the link list.
 
-  - Test 6: Test that traverse returns null if all values are not numbers.
 
-  - Test 7: Test that traverse returns the sum  of all values, even if one of the values is undefined.
+  ### Invalid input
+
+ - Test 5: solution.mezzo should return null when the argument is not an object.
+
+ - Test 6: solution.mezzo should return null when the argument is an empty object
+ 
+ - Test 7: solution.mezzo should return null when the argument does not have an "value" property.
+ 
+ - Test 8: solution.mezzo return null if an object property "next" is not an object, but has a value.
 
 
 
