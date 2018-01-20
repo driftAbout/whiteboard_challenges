@@ -1,0 +1,27 @@
+{
+  "name": "challenge_05",
+  "version": "0.0.0",
+  "description": "Whiteboard Challenge 05: Write a function that returns the middle node in a singly linked list.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint"
+  },
+  "keywords": [
+    "linked",
+    "lists",
+    "next",
+    "function",
+    "curly",
+    "brackets"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "jest": "^22.1.4"
+  }
+}
