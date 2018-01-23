@@ -1,0 +1,24 @@
+{
+  "name": "challenge_06",
+  "version": "0.0.1",
+  "description": "Whiteboard Challenge 06: Write a recursive function called loop that has the function signature (count, callback) => undefined It should call the callback count times (count is expected to be > 0)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "test": "jest --verbose"
+  },
+  "keywords": [
+    "recursive",
+    "function",
+    "challange"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
