@@ -2,19 +2,30 @@
 
   ## Problem Domain
 
-  Write a recursive function called loop that has the function signature (count, callback) => undefined It should call the callback count times (count is expected to be > 0)
+ Write a function which accepts a linked list as it's only argument, and returns true or false. - If the linked list is circular (it has no end), return true - Else return false
 
  
   ## Solution
 
-  - The loop function takes oin 2 arguments, a number to decrement recursive a loop  and a callback function.
+  - The loop function has an airty of one, expecting a linked list to test for circularity.
 
-  - The first line decrements the counter from the count to undefined and validates the arguments.
+  - The first validates the arguments.
 
-  - The third line invokes the callback.
+  - The third line creates a new object with the contents of the argument.
 
-  - The last line recursively calls the function with the number and callback from the arguments. 
+  - Helper function called 'step'
+  
+    - The helper function looks for the existence of a a property, 'deja_vu'.
 
+    - If the property exists then I know the linked list is circular, so return [false, true]
+
+    - Set the 'deja_vu' property to 'true'
+
+    - Return  [object.next, false]
+  
+  - The while loop invokes the helper function which sets the 2 variables, segment and circular
+
+  - When the while loop finishes, return the variable, circular.
 
   
   ## Tests
@@ -23,16 +34,17 @@
      
   - Test 1: Test to validate that the solution module exists.
  
-  - Test 2: Test to validate that solution.loop is a function.
+  - Test 2: Test to validate that solution.ouroboros is a function.
  
-  - Test 3: Test to validate that solution.loop loops n times.
+  - Test 3: Test solution.ouroboros to return false for a non-circular linked list.
+
+  - Test 4: Test solution.ouroboros to return true for a circular linked list
+  
+  - Test 5: Test solution.ouroboros to return false for non-circular linked list with empty head'
+
 
   ### Invalid input
 
- - Test 4: Test solution.loop to validate 0 loops when supplied 0 as an arg.
+  - Test 6: Test solution.ouroboros to return null for an empty object 
 
- - Test 5: Test solution.loop to validate 0 loops when a non number an arg.
- 
- - Test 6: Test solution.loop to validate 0 loops when a callback is missing.
- 
- - Test 7: Test solution.loop to validate 0 loops when a callback is not a function'
+  - Test 7: Test solution.ouroboros to return null for non objects, ie, array, string number, null, undefined.

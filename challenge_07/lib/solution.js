@@ -2,22 +2,28 @@
 
 const solution = module.exports = {};
 
-function loop(n, cb){
-  if (!n-- || typeof n !== 'number' || !cb || typeof cb !== 'function') return;
-  cb(n);
-  loop(n, cb);  
+function ouroboros(lnklst){
+  if (!lnklst || !lnklst.hasOwnProperty('head')) return null;
+  let circular;
+  let segment = Object.assign({}, lnklst.head);
+
+  while(segment){
+    [segment, circular] = step(segment);
+  } 
+  return circular;
+
+  function step(obj){
+    if (obj.hasOwnProperty('deja_vu')) return [false, true];
+    obj.deja_vu = true;
+    return [obj.next, false];
+  }
 }
 
-solution.loop = loop;
+solution.ouroboros = ouroboros;
 
 
 
-/*** works but does not fit criteria of the challenge
- 
-function again(n){
-  if (!n-- || typeof n !== 'number' ) return;
-  loop(n, this(n));  
-}
-const loop = again.bind(n => console.log(n));
 
-***/
+
+
+
