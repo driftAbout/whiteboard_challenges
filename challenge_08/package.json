@@ -1,0 +1,24 @@
+{
+  "name": "challenge_08",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 08 - Write a function that accepts the head of two linked list as it's two arguments, and return the intersection of those two linked lists.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "link",
+    "list",
+    "intersection",
+    "node"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
