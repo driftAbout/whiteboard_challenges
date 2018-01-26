@@ -7,9 +7,7 @@
  
   ## Solution
 
-  - validate that n is a number and that the linked list is a linked list
-
-    - if not, return null
+  - validate that n is a number and that the linked list is a linked list, if not, return null
 
   - Set a counter
 
@@ -25,6 +23,8 @@
   
   
   ## Tests
+
+  ### ```lib/nd.js``` and ```lib/sll.js``` are used to create test data.
   
   ### Valid input
      
