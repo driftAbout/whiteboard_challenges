@@ -1,0 +1,26 @@
+{
+  "name": "challenge_09",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 09 - Write a function which accepts n and a linked list as it's arguments, and will return the nth from last node in a linked list",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint": "eslint",
+    "test": "jest"
+  },
+  "keywords": [
+    "linked",
+    "list",
+    "nth",
+    "end"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
