@@ -7,25 +7,43 @@
  
   ## Solution
 
+  - validate that n is a number and that the linked list is a linked list, if not, return null
+
+  - Set a counter
+
+  - Set a variable as a reference to the head
+
+  - Loop through the linked list from beginning to end
+
+  - When the counter is greater than n, start iterating from the beginning with the variable
+
+  - When the loop finishes, the variable witht eh delayed start is now n nodes from the end
+
+  - if the counter is less than n the offset was out of range so return null 
   
   
   ## Tests
+
+  ### ```lib/nd.js``` and ```lib/sll.js``` are used to create test data.
   
   ### Valid input
      
-  - Test 1: Test to validate that the solution module exists.
+  - Test should return the nth node as a new linked list.
  
-  - Test 2: Test to validate that solution.ouroboros is a function.
- 
-  - Test 3: Test solution.ouroboros to return false for a non-circular linked list.
+  - Test should return the last node when n = 0'
 
-  - Test 4: Test solution.ouroboros to return true for a circular linked list
-  
-  - Test 5: Test solution.ouroboros to return false for non-circular linked list with empty head'
 
 
   ### Invalid input
 
-  - Test 6: Test solution.ouroboros to return null for an empty object 
+  - Test should return null when invoked without parameters. 
 
-  - Test 7: Test solution.ouroboros to return null for non objects, ie, array, string number, null, undefined.
+  - Test should return null when n is not a number
+
+  - Test should return null when the linked list is not a linked list
+
+  - Test should return null when n is less than 0
+
+  - Test should return null when n is out of range of the linked list
+   
+    
