@@ -53,7 +53,7 @@ describe('solution', () => {
     describe.only('Valid input', () => {
       it('Should return true if the value exits in the array', () => {
         let value = 4;
-        let arr = [1,2,3,4,5,6,7,8,9,0];
+        let arr = [1,2,3,4,5,6,7,8,9];
         expect(binarySearch(value, arr)).toBe(true);
       }); 
     });

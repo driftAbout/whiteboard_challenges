@@ -5,20 +5,28 @@ const debug = require('debug')('http:binary-search');
 module.exports = function(val, dataSet) {
   if (typeof val !== 'number' || ! Array.isArray(dataSet)) throw new Error('Invalid input: Expecting (number, array)');
   const half = (val) => Math.floor(val / 2);
+  const right = (max, mid) => [max + 1, Math.floor(max - mid / 2) + mid];
+  const left = (mid, min) => [mid - 1, min - (Math.floor(mid - min / 2))];
   let min = 0;
   let max = dataSet.length - 1;
   let mid = half(max);
   
   let exists = false;
-  while (!exists) {
-    debug('min', min);
-    debug('mid', mid);
-    debug('max', max);
+
+  let x = 0;
+  //while (!exists) {
+  while (x < 5) {
+    x++;
+    debug('VALUE: ', val);
+    debug('min', min, dataSet[min]);
+    debug('mid', mid, dataSet[mid]);
+    debug('max', max, dataSet[max]);
     if (min === max) break;
-    if (val === dataSet[mid]) return exists = true;
-    if(val > dataSet[mid]) [min, mid] = [mid++, half(max - mid)];
-    max = mid--;
-    mid = half(mid - min );
+    if (val === dataSet[mid]) exists = true;
+    //if(val > dataSet[mid]) [min, mid] = [max + 1, half(max - mid) + mid];
+    if(val > dataSet[mid]) [min, mid] = right(max, mid);
+    max = mid - 1;
+    mid = mid - half(mid - min);
   }
   return exists;
 };
