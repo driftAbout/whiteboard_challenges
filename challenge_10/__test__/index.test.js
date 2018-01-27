@@ -50,12 +50,19 @@ describe('solution', () => {
   });
 
   describe('binarySearch', () => {
-    describe.only('Valid input', () => {
+    describe('Valid input', () => {
       it('Should return true if the value exits in the array', () => {
         let value = 4;
         let arr = [1,2,3,4,5,6,7,8,9];
         expect(binarySearch(value, arr)).toBe(true);
       }); 
+
+      it('Should return false if the value does not exits in the array', () => {
+        let value = 11;
+        let arr = [1,2,3,4,5,6,7,8,9];
+        expect(binarySearch(value, arr)).toBe(false);
+      }); 
+
     });
   });
 
