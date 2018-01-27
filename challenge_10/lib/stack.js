@@ -12,12 +12,11 @@ module.exports = class {
 
   push(val){
     if (this.size === this.max_size) return new Error('Stack Overflow: Stack is at Max-size');
-
     let nd = new Nd(val);
-    nd.top = this.top;
+    nd.next = this.top;
     this.top = nd;
     this.size++;
-    return;
+    return true;
   }
   
   

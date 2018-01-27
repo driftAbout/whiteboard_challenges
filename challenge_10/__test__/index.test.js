@@ -1,58 +1,65 @@
 'use strict';
+const debug = require('debug');
 
 const solution = require(`${__dirname}/../index`);
-const Sll = require('../lib/sll');
+const binarySearch = require('../lib/binary-search');
 
-const findNthNodeFromEnd = solution.findNthNodeFromEnd;
+const checkBraces = solution.checkBraces;
 
 describe('solution', () => {
-  const linkedList = [1,2,3,4,5,6,7,8,9].reverse().reduce((acc, val) => acc.insertHead(val) , new Sll());
-  describe('valid input', () => {
-    test('Test 1: solution exists', () => {
-      expect(solution).toBeDefined();
-    });
+  describe('checkBraces', () => {
+    describe('Valid input', () => {
+      it('Should return true if there is a matching closing brace for every opening brace', () => {
+        let braces = '{{{}}}';
+        expect(checkBraces(braces)).toBe(true);
+      }); 
 
-    test('Test 2: sll exists', () => {
-      expect(Sll).toBeDefined();
-    });
+      it('Should return false if there is not a matching closing brace for every opening brace', () => {
+        let braces = '{{{}}}}';
+        expect(checkBraces(braces)).toBe(false);
+      }); 
 
-    test('Test 3: findNthNodeFromEnd is a function', () => {
-      expect(solution.findNthNodeFromEnd).toBeInstanceOf(Function);
-    });
+      it('Should return true if there is a matching closing brace for every opening brace when there is mixed content', () => {
+        let braces = '{1{2{3}a}b}c';
+        expect(checkBraces(braces)).toBe(true);
+      }); 
 
-    test('Test 4: should return the third node as a new linked list', () => {
-      let newlist = findNthNodeFromEnd(3, linkedList);
-      expect(newlist.head.value).toEqual(6);
-    });
+      it('Should return false if there is not a matching closing brace for every opening brace when there is mixed content', () => {
+        let braces = '{1{2{3}a}b}c}';
+        expect(checkBraces(braces)).toBe(false);
+      }); 
 
-    test('Test 5: should return the last node, which has a value of 9 if n = 0', () => {
-      let newlist = findNthNodeFromEnd(0, linkedList);
-      expect(newlist.head.value).toEqual(9);
-    });
+      it('Should return true if there are no curly braces', () => {
+        let braces = 'abcdefg';
+        expect(checkBraces(braces)).toBe(true);
+        braces = '';
+        expect(checkBraces(braces)).toBe(true);
+      }); 
 
+      describe('Invalid input', () => {
+        it('Should return an error message when the argument is not a string', () => {
+          let braces = 4;
+          expect(() => checkBraces(braces)).toThrow();
+          braces = {hello: 'goodbye'};
+          expect(() => checkBraces(braces)).toThrow();
+          braces = ['hello', 'goodbye'];
+          expect(() => checkBraces(braces)).toThrow();
+        }); 
+      }); 
+    });
   });
 
-  describe('invalid input', () => {
-    test('Test 4: should return null for no input', () => {
-      expect(findNthNodeFromEnd()).toBeNull();
+  describe('binarySearch', () => {
+    describe.only('Valid input', () => {
+      it('Should return true if the value exits in the array', () => {
+        let value = 4;
+        let arr = [1,2,3,4,5,6,7,8,9,0];
+        expect(binarySearch(value, arr)).toBe(true);
+      }); 
     });
+  });
 
-    test('Test 5: should return null when n is not a number', () => {
-      expect(findNthNodeFromEnd('string', linkedList)).toBeNull();
-    });
-
-    test('Test 6: should return null when the linked list is not a linked list', () => {
-      expect(findNthNodeFromEnd(3, {})).toBeNull();
-    });
-
-    test('Test 7: should return null when n is less than 0', () => {
-      expect(findNthNodeFromEnd(3, {})).toBeNull();
-    });
-
-    test('Test 8: should return null when n is out of range of the linked list', () => {
-      expect(findNthNodeFromEnd(22, linkedList)).toBeNull();
-    });
-    
-  }); 
 });
+
+
     
