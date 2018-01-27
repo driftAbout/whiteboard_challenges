@@ -1,0 +1,26 @@
+{
+  "name": "challenge_10",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 10: Write two functions. 1.Write a function checkBraces() to examine whether the pairs and the orders of { and } are correct in a string, using a Stack. 2. Write a function that accepts n and a sorted array as it's arguments, and implement binary search on the array using n as the value to search.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest -i",
+    "test:debug": "DEBUG=http* jest -i"
+  },
+  "keywords": [
+    "binary",
+    "search",
+    "stack"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "debug": "^3.1.0",
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}

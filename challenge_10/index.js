@@ -1,17 +1,22 @@
 'use strict';
 
+const Stack = require('./lib/stack');
+const binarySearch = require('./lib/binary-search');
+const debug = require('debug')('http:solution');
+
 const solution = module.exports = {};
 
-solution.findNthNodeFromEnd = (n, lnklst) => {
-  if( typeof n !== 'number' || !lnklst.hasOwnProperty('head')) return null;
-  if(n < 0) return null;
-  let i = 0;
-  let curr_node = lnklst.head;
-  for(let next_node = lnklst.head; next_node.next; next_node = next_node.next){
-    if((i > n)) curr_node = curr_node.next;
-    i++;
-  }
-  curr_node = curr_node.next;
-  if(i < n) return null;
-  return {head: curr_node};
+solution.checkBraces = (braces_str) => {
+  debug('#checkBraces');
+  if (typeof braces_str !== 'string') throw new Error('Invalid input: Expecting string');
+  let stack = new Stack();
+  return braces_str.split('').every(val => {
+    debug(`#checkBraces val = ${val}`);
+    if(val === '{') return stack.push(val);
+    if(val === '}') return stack.pop();
+    return true;
+  });
 };
+
+solution.binarySearch = (value, dataset) => binarySearch(value, dataset); 
+
