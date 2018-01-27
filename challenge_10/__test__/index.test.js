@@ -51,16 +51,25 @@ describe('solution', () => {
 
   describe('binarySearch', () => {
     describe('Valid input', () => {
-      it('Should return true if the value exits in the array', () => {
+      it('Should return object if the value exits in the array', () => {
         let value = 4;
         let arr = [1,2,3,4,5,6,7,8,9];
-        expect(binarySearch(value, arr)).toBe(true);
+        expect(binarySearch(value, arr)).toBeInstanceOf(Object);
       }); 
 
       it('Should return false if the value does not exits in the array', () => {
-        let value = 11;
+        let value = 29;
         let arr = [1,2,3,4,5,6,7,8,9];
-        expect(binarySearch(value, arr)).toBe(false);
+        expect(binarySearch(value, arr)).toBeNull();
+      }); 
+
+      it('Should return an object with the value and index if if the value exits in the array. {value: n, index: i}', () => {
+        let value = 7;
+        let arr = [1,2,3,4,5,6,7,8,9,10,11];
+        expect(binarySearch(value, arr)).toEqual({
+          value: 7,
+          index: 6,
+        });
       }); 
 
     });
