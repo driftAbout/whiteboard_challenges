@@ -1,30 +1,82 @@
-# Whiteboard Challenge 09
+# Whiteboard Challenge 10
 
-  ## Problem Domain
+>## Problem Domain
+
+### Check Braces
   
-  Write a function which accepts n and a linked list as it's arguments, and will return the nth from last node in a linked list
+  1. Write a function checkBraces() to examine whether the pairs and the orders of { and } are correct in a string, using a Stack.
+
+### Binary Search
+
+  1.  Write a function that accepts n and a sorted array as it's arguments, and implement binary search on the array using n as the value to search.
+
+  2. If found, return the value n and the location in the array as {value: n, index: i}, else return null
 
  
-  ## Solution
+ >## Solution
 
-  - validate that n is a number and that the linked list is a linked list, if not, return null
+  ### Check Braces
 
-  - Set a counter
+  - Validate the the input is a string. Return an error if not.
 
-  - Set a variable as a reference to the head
+  - Create a new instance of a stack.
 
-  - Loop through the linked list from beginning to end
+  - Split the string into an array of characters
 
-  - When the counter is greater than n, start iterating from the beginning with the variable
+  - Return the value of the iteration of the array using Array.prototype.every
 
-  - When the loop finishes, the variable witht eh delayed start is now n nodes from the end
+    - Add each opening curly brace into the stack
 
-  - if the counter is less than n the offset was out of range so return null 
+    - pop an item off the stack every time a closing curly brace is found
+
+    - If the stack is empty, and a pop is attempted, pop returns null, this means there was not unmatched set of braces
+
+   
+   ### Binary Search   
+
+   - Validate the arguments.  If the first argument is not a number or the second item is not an array, throw an error.
+
+   - Before initiating a search, check to see if the value to search is even in the range of the array, return null if not
+
+   - Create a function to calculate teh mid point between two numbers, rounding down to the nearest whole number.
+
+   - Set variables to track minimum, middle, and maximum endpoint indexes.
+
+   - set a flag to use to stop the while loop if the item is found
+
+   - iterate over the array with a while loop
+
+      - if the given value is equal to the value at the current index then set exists to true
+
+      - if the value was not equal, check to see if the min index is equal to the max index.  if so the value was not found so return false.
+
+      - If the value is greater than the value at the current index, reset the search indexes
+
+        - mid = mid + 1
+
+        - min = mid 
+
+        - max = max
+
+        - mid = floor ( max - min/ 2 ) + mid
+
+      - If the value is less than the value at the current index, reset the search indexes
+
+        - mid = mid - 1
+
+        - max = mid 
+
+        - min = min
+
+        - mid = min - floor ( max - min/ 2 )
+
+     - if exists is true, return the value and index as an object. 
+
+
   
   
-  ## Tests
+>## Tests
 
-  ### ```lib/nd.js``` and ```lib/sll.js``` are used to create test data.
   
   ### Valid input
      
