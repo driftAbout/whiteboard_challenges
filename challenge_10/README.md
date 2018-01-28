@@ -1,49 +1,115 @@
-# Whiteboard Challenge 09
+# Whiteboard Challenge 10
 
-  ## Problem Domain
+>## Problem Domain
+
+### Check Braces
   
-  Write a function which accepts n and a linked list as it's arguments, and will return the nth from last node in a linked list
+  1. Write a function checkBraces() to examine whether the pairs and the orders of { and } are correct in a string, using a Stack.
+
+### Binary Search
+
+  1.  Write a function that accepts n and a sorted array as it's arguments, and implement binary search on the array using n as the value to search.
+
+  2. If found, return the value n and the location in the array as {value: n, index: i}, else return null
 
  
-  ## Solution
+ >## Solution
 
-  - validate that n is a number and that the linked list is a linked list, if not, return null
+  ### Check Braces
 
-  - Set a counter
+  - Validate the the input is a string. Return an error if not.
 
-  - Set a variable as a reference to the head
+  - Create a new instance of a stack.
 
-  - Loop through the linked list from beginning to end
+  - Split the string into an array of characters
 
-  - When the counter is greater than n, start iterating from the beginning with the variable
+  - Return the value of the iteration of the array using Array.prototype.every
 
-  - When the loop finishes, the variable witht eh delayed start is now n nodes from the end
+    - Add each opening curly brace into the stack
 
-  - if the counter is less than n the offset was out of range so return null 
-  
-  
-  ## Tests
+    - pop an item off the stack every time a closing curly brace is found
 
-  ### ```lib/nd.js``` and ```lib/sll.js``` are used to create test data.
-  
-  ### Valid input
-     
-  - Test should return the nth node as a new linked list.
- 
-  - Test should return the last node when n = 0'
+    - If the stack is empty, and a pop is attempted, pop returns null, this means there was not unmatched set of braces
 
-
-
-  ### Invalid input
-
-  - Test should return null when invoked without parameters. 
-
-  - Test should return null when n is not a number
-
-  - Test should return null when the linked list is not a linked list
-
-  - Test should return null when n is less than 0
-
-  - Test should return null when n is out of range of the linked list
    
-    
+   ### Binary Search   
+
+   - Validate the arguments.  If the first argument is not a number or the second item is not an array, throw an error.
+
+   - Before initiating a search, check to see if the value to search is even in the range of the array, return null if not
+
+   - Create a function to calculate teh mid point between two numbers, rounding down to the nearest whole number.
+
+   - Set variables to track minimum, middle, and maximum endpoint indexes.
+
+   - set a flag to use to stop the while loop if the item is found
+
+   - iterate over the array with a while loop
+
+      - if the given value is equal to the value at the current index then set exists to true
+
+      - if the value was not equal, check to see if the min index is equal to the max index.  if so the value was not found so return false.
+
+      - If the value is greater than the value at the current index, reset the search indexes
+
+        - mid = mid + 1
+
+        - min = mid 
+
+        - max = max
+
+        - mid = floor ( max - min/ 2 ) + mid
+
+      - If the value is less than the value at the current index, reset the search indexes
+
+        - mid = mid - 1
+
+        - max = mid 
+
+        - min = min
+
+        - mid = min - floor ( max - min/ 2 )
+
+     - if exists is true, return the value and index as an object. 
+
+  
+
+>## Tests
+
+  ### Check Braces
+
+  #### Valid input
+
+  1. Test to validate a return of true if there is a matching closing brace for every opening brace
+
+  2. Test to validate a return of false if there is not a matching closing brace for every opening brace
+
+  3. Test to validate a return of true if there is a matching closing brace for every opening brace when there is mixed content.
+
+  4. Test to validate a return of false if there is not a matching closing brace for every opening brace when there is mixed content
+
+  5. Test to validate a return of true if there are no curly braces.
+
+  #### Invalid input
+
+  1. Test to validate a return of an error message when the argument is not a string
+
+      
+
+  ### Binary Search
+
+  #### Valid input
+
+  1. Test to validate a return of an object if the value exits in the array
+
+  2. Test to validate a return of false if the value does not exits in the array
+
+  3. Test to validate a return of an object with the value and index if if the value exits in the array
+
+  #### Invalid input
+
+  1. Test to validate thrown error if the given value is not a number
+
+  2. Test to validate thrown error if the given array is not an array
+
+  3. Test to validate thrown object an error if the search is called with out any arguments
