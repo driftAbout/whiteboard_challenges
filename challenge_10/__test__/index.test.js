@@ -1,5 +1,4 @@
 'use strict';
-const debug = require('debug');
 
 const solution = require(`${__dirname}/../index`);
 const binarySearch = require('../lib/binary-search');
@@ -70,6 +69,30 @@ describe('solution', () => {
           value: 7,
           index: 6,
         });
+      }); 
+    });
+
+    describe('Valid input', () => {
+      it('Should throw an error if the given value is not a number', () => {
+        let value = 'giggle snort';
+        let arr = [1,2,3,4,5,6,7,8,9];
+        expect(() => {
+          binarySearch(value, arr);
+        }).toThrow('Invalid input: Expecting (number, array)');
+      }); 
+
+      it('Should throw an error if the given array is not an array', () => {
+        let value = 6;
+        let arr = 'moo';
+        expect(() => {
+          binarySearch(value, arr);
+        }).toThrow('Invalid input: Expecting (number, array)');
+      }); 
+
+      it('Should throw an error if the search is called with out any arguments', () => {
+        expect(() => {
+          binarySearch();
+        }).toThrow('Invalid input: Expecting (number, array)');
       }); 
 
     });

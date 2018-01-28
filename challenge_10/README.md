@@ -72,30 +72,44 @@
 
      - if exists is true, return the value and index as an object. 
 
+  
 
-  
-  
 >## Tests
 
-  
-  ### Valid input
-     
-  - Test should return the nth node as a new linked list.
- 
-  - Test should return the last node when n = 0'
+  ### Check Braces
 
+  #### Valid input
 
+  1. Test to validate a return of true if there is a matching closing brace for every opening brace
 
-  ### Invalid input
+  2. Test to validate a return of false if there is not a matching closing brace for every opening brace
 
-  - Test should return null when invoked without parameters. 
+  3. Test to validate a return of true if there is a matching closing brace for every opening brace when there is mixed content.
 
-  - Test should return null when n is not a number
+  4. Test to validate a return of false if there is not a matching closing brace for every opening brace when there is mixed content
 
-  - Test should return null when the linked list is not a linked list
+  5. Test to validate a return of true if there are no curly braces.
 
-  - Test should return null when n is less than 0
+  #### Invalid input
 
-  - Test should return null when n is out of range of the linked list
-   
-    
+  1. Test to validate a return of an error message when the argument is not a string
+
+      
+
+  ### Binary Search
+
+  #### Valid input
+
+  1. Test to validate a return of an object if the value exits in the array
+
+  2. Test to validate a return of false if the value does not exits in the array
+
+  3. Test to validate a return of an object with the value and index if if the value exits in the array
+
+  #### Invalid input
+
+  1. Test to validate thrown error if the given value is not a number
+
+  2. Test to validate thrown error if the given array is not an array
+
+  3. Test to validate thrown object an error if the search is called with out any arguments
