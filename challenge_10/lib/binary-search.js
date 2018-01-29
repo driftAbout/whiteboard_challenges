@@ -8,13 +8,18 @@ module.exports = function(val, dataSet) {
   let max = dataSet.length - 1;
   let mid = half(max, min);
   
-  let exists = false;
-  while (!exists) {
-    if (val === dataSet[mid]) exists = true;
-    if (min === max ) break;
+  let exists = dataSet.some(() => {
+    if (val === dataSet[mid]) return true;
+    if (min === max ) return false;
     val > dataSet[mid] ? ( min = ++mid, mid+=half(max, min)) : (max = --mid,  mid-=half(max, min) );
-  }
+  });
   return exists ?  {value: val, index: mid} : null;
 };
+
+
+
+
+
+ 
 
 
