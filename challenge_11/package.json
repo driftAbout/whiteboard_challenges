@@ -1,0 +1,24 @@
+{
+  "name": "challenge_11",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 11 - You have an integer array which contains numbers from 1 to 100 but one number is missing, you need to write a function calculateMissing = (array) => {...} to find that missing number in an array.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --verbose -i"
+  },
+  "keywords": [
+    "array",
+    "search",
+    "sequential"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
