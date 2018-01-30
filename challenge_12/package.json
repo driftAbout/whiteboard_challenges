@@ -1,0 +1,25 @@
+{
+  "name": "challenge_12",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 12 - Implement a Queue using only two Stacks",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "stacks",
+    "queue",
+    "queued",
+    "stack",
+    "node",
+    "filp",
+    "flop",
+    "ihop",
+    "pancakes"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT"
+}
