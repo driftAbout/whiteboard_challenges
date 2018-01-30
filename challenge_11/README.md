@@ -1,49 +1,41 @@
-# Whiteboard Challenge 09
+# Whiteboard Challenge 11
 
   ## Problem Domain
   
-  Write a function which accepts n and a linked list as it's arguments, and will return the nth from last node in a linked list
+  Complete today's whiteboard challenge and follow the submission instructions below:
 
+  You have an integer array which contains numbers from 1 to 100 but one number is missing, you need to write a function calculateMissing = (array) => {...} to find that missing number in an array.
  
   ## Solution
 
-  - validate that n is a number and that the linked list is a linked list, if not, return null
+  - Validate that the input is an array, otherwise throw an error.
 
-  - Set a counter
+  - Iterate over the array using reduce.
 
-  - Set a variable as a reference to the head
+  - Set the initial value of reduce to an array with the same number of undefined values as items in the original array.
 
-  - Loop through the linked list from beginning to end
+  - Use the value of the items in the original array as the indexes of the new array and delete those indexes
 
-  - When the counter is greater than n, start iterating from the beginning with the variable
+  - The index of the remaining undefined value in the new array, plus one is the missing value. 
 
-  - When the loop finishes, the variable witht eh delayed start is now n nodes from the end
-
-  - if the counter is less than n the offset was out of range so return null 
   
   
   ## Tests
-
-  ### ```lib/nd.js``` and ```lib/sll.js``` are used to create test data.
   
   ### Valid input
+
+  - Test to validate the return of the missing value from the array
+
+  - Test to validate the returned value is not in teh original array
+
+  - Test to validate the the function works on an unsorted array
      
-  - Test should return the nth node as a new linked list.
- 
-  - Test should return the last node when n = 0'
-
-
 
   ### Invalid input
 
-  - Test should return null when invoked without parameters. 
+  - Test should throw an error when invoked without parameters. 
 
-  - Test should return null when n is not a number
+  - Test should throw an error when the input is not an array.
 
-  - Test should return null when the linked list is not a linked list
-
-  - Test should return null when n is less than 0
-
-  - Test should return null when n is out of range of the linked list
    
     
