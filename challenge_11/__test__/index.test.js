@@ -31,9 +31,14 @@ describe('solution', () => {
 
     it('should return false for arr.includes(missing )', () => {
       let val = solution.calculateMissing(this.arr);
-      expect(this.arr.includes(val)).toBe('false');
+      expect(this.arr.includes(val)).toBe(false);
     });
 
+    it('should return the missing value from an unsorted array', () => {
+      this.arr = this.arr.sort();
+      expect(solution.calculateMissing(this.arr)).toEqual(this.missing + 1);
+    });
+    
   });
   describe('Invalid input', () => {
     it('should throw invalid input error', () => {
