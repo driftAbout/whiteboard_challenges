@@ -1,0 +1,30 @@
+{
+  "name": "challenge_12",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 12 - Implement a Queue using only two Stacks",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --verbose -i"
+  },
+  "keywords": [
+    "stacks",
+    "queue",
+    "queued",
+    "stack",
+    "node",
+    "filp",
+    "flop",
+    "ihop",
+    "pancakes"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
