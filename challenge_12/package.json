@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest"
+    "lint": "eslint .",
+    "test": "jest --verbose -i"
   },
   "keywords": [
     "stacks",
@@ -21,5 +22,9 @@
     "pancakes"
   ],
   "author": "Kevin Miller",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
 }

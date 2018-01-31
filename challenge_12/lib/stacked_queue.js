@@ -4,23 +4,29 @@ const Stack = require('./stack');
 module.exports = class {
   
   constructor() {
-    this.front = new Stack();
-    this.back = new Stack();
+    this.line = new Stack();
+    this.shaker = new Stack();
+    this.front = null;
+    this.back = null;
   }
 
   enqueue(val){
-    this.front.push(val);
-    return this.front;
+    this.line.push(val);
+    if(!this.back) this.front = this.line.top;
+    this.back = this.line.top;
+    return this;
   }
 
   dequeue(){
-    while(this.front.size){
-      this.back.push(this.front.pop());
+    while(this.line.size){
+      this.shaker.push(this.line.pop());
     }
-    let popVal =  this.back.pop();
-    while(this.back.size){
-      this.front.push(this.back.pop());
+    let popVal = this.shaker.pop();
+    this.front =  this.shaker.top;
+    while(this.shaker.size){
+      this.line.push(this.shaker.pop());
     }
+    this.back = this.line.top;
     return popVal;
   }
 
