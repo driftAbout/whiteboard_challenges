@@ -1,0 +1,27 @@
+{
+  "name": "challenge_15",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 15 - Write a function that accepts the root of a tree as it's argument, and returns an array of nodes, if any, which have no children.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --verbose -i"
+  },
+  "keywords": [
+    "kary",
+    "trees",
+    "node",
+    "stacks",
+    "linked",
+    "list",
+    "queue"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.1.4"
+  }
+}
