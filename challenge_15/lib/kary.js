@@ -21,14 +21,22 @@ module.exports = class {
       this.root =  tn;
       return this;
     }
-
+    console.log('parent', tn);
     if (parent === undefined) throw new Error('Validation Error: Parent value is undefined.');
-
+    console.log('parent', tn);
+    if (!this.root.children){
+      this.root.children =  new SLL();
+      this.root.children.insertHead(tn);
+      return this;
+    }
     this.breadthFirst( node => {
+      console.log('parent', tn);
       if( parent === node.value.value) {
+      
         if (!node.value.children) node.value.children = new SLL();
         node.value.children.insertHead(tn);
-        return;
+        console.log('node.value.children', node.value.children);
+        return this;
       } 
     });
     return this;
@@ -68,9 +76,12 @@ module.exports = class {
 
   breadthFirst(callback){
     let childrenQue = new Queue();
-    if (!this.root.children) this.root.children =  new SLL();
+    //if (!this.root.children) this.root.children =  new SLL();
+    console.log('this.root', this.root)
     childrenQue.enqueue(this.root.children.head);
+    //childrenQue.enqueue(this.root.children.head);
     let node = childrenQue.dequeue();
+    console.log('node', node);
     while(node){
       callback(node);
       childrenQue.enqueue(node.value.children.head);

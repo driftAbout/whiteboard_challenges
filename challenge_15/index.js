@@ -9,8 +9,8 @@ solution.jejune = (root) =>{
 
   console.log(root);
   let nullNodes = [];
-  breadthFirst.call({root: root}, node => {
-    console.log(node);
+  breadthFirst.call({root: root, test:true}, node => {
+    console.log(this);
     if( node.value.value === null) {
       nullNodes.push(node.value);
     }

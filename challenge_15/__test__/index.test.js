@@ -23,8 +23,7 @@ describe('solution', () => {
       this.kt = new KT();
       this.kt.insert(8);
       this.kt.insert(1,8);
-
-     // [1,9,2,8,3,7,4,5].map(val => this.kt.insert(val,8));
+      // [1,9,2,8,3,7,4,5].map(val => this.kt.insert(val,8));
       console.log('this.kt', this.kt);
     });
   
