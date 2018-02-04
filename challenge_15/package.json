@@ -8,7 +8,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "jest --verbose -i"
+    "test": "jest --verbose -i",
+    "test:debug": "DEBUG=http* jest --verbose -i"
   },
   "keywords": [
     "kary",
@@ -22,6 +23,7 @@
   "author": "Kevin Miller",
   "license": "MIT",
   "devDependencies": {
+    "debug": "^3.1.0",
     "jest": "^22.1.4"
   }
 }
