@@ -4,9 +4,15 @@
   
   Implement a Queue using only two Stacks
 
-  >## Solution
+>## Solution
 
-  
+  - Build a queue with two stacks.  One representing a line, the other is the 'shaker'.
+
+  - Add a front and back property that are managed by the enqueue and dequeue methods.
+
+  - Enqueue pushes a value into the line stack and sets the front and back
+
+  - Dequeue pushes each item from the line stack into the shaker stack, then pops the value of the shker stack and then pushes each value back into the line stack.
   
   
   >## Tests
