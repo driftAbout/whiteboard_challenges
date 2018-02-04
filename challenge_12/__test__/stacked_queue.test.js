@@ -53,7 +53,7 @@ describe('Queue class', () => {
       }).toThrow('Invalid input: Value is undefined');
     });
 
-    it('Should retrun null when attempting to  dequeue an empty queue', () => {
+    it('Should return null when attempting to  dequeue an empty queue', () => {
       expect(this.queue.dequeue()).toBeNull();
     });
 
