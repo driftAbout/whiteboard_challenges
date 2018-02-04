@@ -1,6 +1,6 @@
 'use strict';
 
-const Queue = require(`${__dirname}'/../lib/stacked_queue`);
+const Queue = require(`${__dirname}'/../index.js`);
 
 describe('Queue class', () => {
   beforeEach( () => {
