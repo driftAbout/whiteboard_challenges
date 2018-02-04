@@ -1,6 +1,6 @@
 'use strict';
 
-const Queue = require(`${__dirname}'/../lib/stacked_queue`);
+const Queue = require(`${__dirname}'/../index.js`);
 
 describe('Queue class', () => {
   beforeEach( () => {
@@ -53,7 +53,7 @@ describe('Queue class', () => {
       }).toThrow('Invalid input: Value is undefined');
     });
 
-    it('Should retrun null when attempting to  dequeue an empty queue', () => {
+    it('Should return null when attempting to  dequeue an empty queue', () => {
       expect(this.queue.dequeue()).toBeNull();
     });
 
