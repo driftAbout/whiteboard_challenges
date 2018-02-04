@@ -1,5 +1,6 @@
 'use strict';
 
+const debug = require('debug')('http:kary');
 const SLL = require('./sll');
 const Queue = require('./queue');
 
@@ -16,19 +17,46 @@ module.exports = class {
   }
 
   insert(val, parent) {
+
     let tn = new Tn(val);
     if (!this.root){
       this.root =  tn;
       return this;
     }
-
+   
     if (parent === undefined) throw new Error('Validation Error: Parent value is undefined.');
+    if (!this.root.children){
+      this.root.children =  new SLL();
+      this.root.children.insertHead(tn);
+      return this;
+    }
 
+    if( parent === this.root.value ) {
+      if (!this.root.children) this.root.children = new SLL();
+      this.root.children.insertHead(tn);
+      return this;
+    }
+    // let tn = new Tn(val);
+    // if (!this.root){
+    //   this.root =  tn;
+    //   return this;
+    // }
+    // console.log('parent', tn);
+    // if (parent === undefined) throw new Error('Validation Error: Parent value is undefined.');
+    // console.log('parent', tn);
+    // if (!this.root.children){
+    //   this.root.children =  new SLL();
+    //   this.root.children.insertHead(tn);
+    //   return this;
+    // }
     this.breadthFirst( node => {
+      
       if( parent === node.value.value) {
+        debug('parent', tn);
         if (!node.value.children) node.value.children = new SLL();
         node.value.children.insertHead(tn);
-        return;
+        debug('node.value.children', node.value.children);
+        return this;
       } 
     });
     return this;
@@ -64,17 +92,48 @@ module.exports = class {
       previous_node = node;
     });
   }
-   
 
+  insertData(val, parent) {
+    let tn = new Tn(val);
+    if (!this.root){
+      this.root =  tn;
+      return this;
+    }
+   
+    if (parent === undefined) throw new Error('Validation Error: Parent value is undefined.');
+    if (!this.root.children){
+      this.root.children =  new SLL();
+      this.root.children.insertHead(tn);
+      return this;
+    }
+
+    if( parent.eleName === this.root.value.eleName ) {
+      if (!this.root.children) this.root.children = new SLL();
+      this.root.children.insertHead(tn);
+      return this;
+    }
+
+    this.breadthFirst( node => {
+      if( parent.eleName === node.value.value.eleName) {
+        if (!node.value.children) node.value.children = new SLL();
+        node.value.children.insertHead(tn);
+        return this;
+      } 
+    });
+    return this;
+  }
+   
   breadthFirst(callback){
     let childrenQue = new Queue();
-    if (!this.root.children) this.root.children =  new SLL();
     childrenQue.enqueue(this.root.children.head);
-    let node = childrenQue.dequeue();
-    while(node){
-      callback(node);
-      childrenQue.enqueue(node.value.children.head);
-      node = node.next;
+    let node; 
+    while(childrenQue.back){
+      node = childrenQue.dequeue();
+      while(node){
+        callback(node);
+        if (node.value.children) childrenQue.enqueue(node.value.children.head);
+        node = node.next;
+      }
     }
   }
 
