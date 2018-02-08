@@ -4,6 +4,8 @@ const debug = require('debug')('http:kary');
 const SLL = require('./sll');
 const Queue = require('./queue');
 
+debug('kary tree');
+
 class Tn {
   constructor(val) {
     this.value = val;
@@ -50,12 +52,9 @@ module.exports = class {
     //   return this;
     // }
     this.breadthFirst( node => {
-      
       if( parent === node.value.value) {
-        debug('parent', tn);
         if (!node.value.children) node.value.children = new SLL();
         node.value.children.insertHead(tn);
-        debug('node.value.children', node.value.children);
         return this;
       } 
     });
