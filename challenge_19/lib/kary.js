@@ -36,19 +36,7 @@ module.exports = class {
       this.root.children.insertHead(tn);
       return this;
     }
-    // let tn = new Tn(val);
-    // if (!this.root){
-    //   this.root =  tn;
-    //   return this;
-    // }
-    // console.log('parent', tn);
-    // if (parent === undefined) throw new Error('Validation Error: Parent value is undefined.');
-    // console.log('parent', tn);
-    // if (!this.root.children){
-    //   this.root.children =  new SLL();
-    //   this.root.children.insertHead(tn);
-    //   return this;
-    // }
+
     this.breadthFirst( node => {
       
       if( parent === node.value.value) {
