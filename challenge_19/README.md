@@ -7,13 +7,15 @@
  
   >## Solution
 
-  - Validate input
+  - Validate input, expecting the root of a k-ary tree, return error for invalid input
 
-  - Iterate each node looking for children properties with a value of of null
+  - Iterate each node pushing the value to an array.
 
-  - Push push each found node to an array
+  - Sort the array in ascending order
 
-  - Return the array
+  - Create a linked list from the array with the highest value at the head.value
+
+  - Return the linked list
  
   
   >## Tests
