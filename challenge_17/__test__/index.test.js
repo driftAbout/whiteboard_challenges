@@ -1,8 +1,10 @@
 'use strict';
 
-//const debug = require('debug')('http:test');
+const debug = require('debug')('http:index-test');
 const solution = require(`${__dirname}/../index`);
 const KT = require('../lib/kary');
+
+debug('index.test.js');
 
 describe('solution', () => {
 
@@ -29,26 +31,36 @@ describe('solution', () => {
         val.forEach((num, i) => {
           parent = val[0];
           if (i === 0) parent = root;
-          // debug('parent', parent, 'value', num, 'i', i);
           this.kt.insert(num, parent);
         });
       });
     });
   
-    it('Should be an array', () => {
-      expect(solution.branchTotal(this.kt.root)).toBeInstanceOf(Array);
+    it('Should output should be a number', () => {
+      expect(typeof solution.branchTotal(this.kt.root) === 'number').toBe(true);
     });
 
-    it('Should contain nodes with the keys of value and children', () => {
-      expect(Object.keys(solution.branchTotal(this.kt.root)[0])).toEqual(expect.arrayContaining(['value', 'children']));
+    it('Should return the sum of all the values in the tree', () => {
+      expect(solution.branchTotal(this.kt.root)).toEqual(56);
     });
 
-    it('Should contain nodes with the keys of value and children', () => {
-      expect(Object.keys(solution.branchTotal(this.kt.root)[0])).toEqual(expect.arrayContaining(['value', 'children']));
+    it('Should return 0 for trees with a sum of 0', () => {
+      let kt = new KT();
+      kt.insert(1);
+      kt.insert(0,1);
+      kt.insert(-1,1);
+      debug('kt', JSON.stringify(kt.root));
+      expect(solution.branchTotal(kt.root)).toEqual(0);
     });
-    it('Should contain nodes with the keys of value and children', () => {
-      expect(solution.branchTotal(this.kt.root).map(val => val.value)).toEqual(expect.arrayContaining([1,2,3,7,5]));
+
+    it('Should return null for trees with no numeric values', () => {
+      let kt = new KT();
+      kt.insert('a');
+      kt.insert('b', 'a');
+      kt.insert('c', 'a');
+      expect(solution.branchTotal(kt.root)).toBeNull();
     });
+
   });
 
   describe('Invalid input', () => {
