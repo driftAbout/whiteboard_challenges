@@ -1,0 +1,44 @@
+{
+  "name": "challenge_17",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 17 - return all the values of a tree as a sum",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest i",
+    "test:debug": "DEBUG=http* jest i"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coveragePathIgnorePatterns": [
+      "/__test__/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "keywords": [
+    "node",
+    "trees",
+    "jest",
+    "sll",
+    "queues"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "jest": "^22.2.1"
+  }
+}

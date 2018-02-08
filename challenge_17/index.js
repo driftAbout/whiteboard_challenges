@@ -1,7 +1,9 @@
 'use strict';
-
+const debug = require('debug')('http:index-js');
 const KT = require('./lib/kary');
 const breadthFirst = new KT().breadthFirst;
+
+debug('index.js');
 
 const solution = module.exports = {};
 
@@ -9,13 +11,13 @@ solution.branchTotal = (root) =>{
   if(!root) throw new Error('Invalid input:  expecting a tree structure');
   if (!root.hasOwnProperty('value') || !root.hasOwnProperty('children')) throw new Error('Invalid input:  expecting a tree structure');
   
-  let total = 0;
+  let total = root.value;
   breadthFirst.call({root: root}, node => {
-    if( !node.value === null) {
-      total += node.value;
+    if(typeof node.value.value === 'number') {
+      total += node.value.value;
     }
   });
-  return total  ? total  : null;
+  return (typeof total === 'number')  ? total  : null;
 };
 
 
