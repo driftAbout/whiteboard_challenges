@@ -1,0 +1,49 @@
+{
+  "name": "challenge_18",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 18 - Write a function which will return the max child count of a node within a k-ary tree",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "test": "jest -i",
+    "test:debug": "DEBUG=http:* jest -i"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "coveragePathIgnorePatterns": [
+      "/__test__/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "keywords": [
+    "kary",
+    "max",
+    "child",
+    "count",
+    "node",
+    "jest",
+    "tree",
+    "data",
+    "structures"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "debug": "^3.1.0",
+    "eslint": "^4.17.0",
+    "jest": "^22.2.1"
+  }
+}

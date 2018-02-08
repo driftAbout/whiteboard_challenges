@@ -40,11 +40,11 @@ describe('solution', () => {
     });
 
     it('Should contain the keys of value and children', () => {
-      expect(Object.keys(solution.max_childNode(this.kt.root))).toEqual(expect.arrayContaining(['value', 'children']));
+      expect(Object.keys(solution.max_childNode(this.kt.root).value)).toEqual(expect.arrayContaining(['value', 'children']));
     });
 
     it('Should contain nodes with value', () => {
-      expect(solution.max_childNode(this.kt.root).value).toEqual(13);
+      expect(solution.max_childNode(this.kt.root).value.value).toEqual(13);
     });
   });
 
@@ -53,19 +53,19 @@ describe('solution', () => {
     it('Should throw error if no value is passed', () => {
       expect(() => {
         solution.max_childNode();
-      }).toThrow('Invalid input:  expecting a tree structure');
+      }).toThrow('Invalid input: expecting a tree structure');
     });
 
     it('Should throw error if non tree is passed as input', () => {
       expect(() => {
         solution.max_childNode({});
-      }).toThrow('Invalid input:  expecting a tree structure');
+      }).toThrow('Invalid input: expecting a tree structure');
     });
 
     it('Should throw error if bad input is passed', () => {
       expect(() => {
         solution.max_childNode('hello');
-      }).toThrow('Invalid input:  expecting a tree structure');
+      }).toThrow('Invalid input: expecting a tree structure');
     });
 
   });
