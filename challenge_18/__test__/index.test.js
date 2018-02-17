@@ -10,11 +10,11 @@ describe('solution', () => {
     it('should exist', () => {
       expect(solution).toBeDefined();
     });
-    it('Should exists, solution.jejune', () => {
+    it('Should exists, new k-ary tree', () => {
       expect(KT).toBeDefined();
     });
 
-    it('Should exists, solution.jejune', () => {
+    it('Should exists, solution.max_childNode', () => {
       expect(solution.max_childNode).toBeDefined();
     });
   });

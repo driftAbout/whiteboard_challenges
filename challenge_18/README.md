@@ -1,19 +1,17 @@
-># Whiteboard Challenge 15
+># Whiteboard Challenge 18
 
   >## Problem Domain
   
-  Write a function that accepts the root of a tree as it's argument, and returns an array of nodes, if any, which have no children.
-
- 
+  Write a function that accepts the root of a tree as it's argument, and returns the node with that has the max child count 
   >## Solution
 
   - Validate input
 
-  - Iterate each node looking for children properties with a value of of null
+  - Iterate each node, counting each child node
 
-  - Push push each found node to an array
+  - If the node count is greater than the max count, replace the max count
 
-  - Return the array
+  - Return the max count
  
   
   >## Tests
@@ -22,13 +20,15 @@
   
   ### Valid input
      
-  - Validate that teh result is an array
+  - Validate that the result is an array
 
   - Validate that the result contains nodes with the keys of value and children
 
   - Validate that the result contains nodes with the keys of value and children
 
   - Validate that the result contains nodes with the keys of value and children',
+
+  - Validate that the result contains the node with the highest child count',
 
   ### Invalid input
 
