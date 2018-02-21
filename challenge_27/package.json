@@ -1,0 +1,28 @@
+{
+  "name": "challenge_27",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 27 - Given a 2-dimensional array of numbers, rotate the array 90 degrees to the right.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose -i",
+    "test:debug": "DEBUG=http* jest --verbose -i"
+  },
+  "keywords": [
+    "array",
+    "rotate",
+    "loop",
+    "node",
+    "jest"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.4.0"
+  },
+  "dependencies": {
+    "debug": "^3.1.0"
+  }
+}
