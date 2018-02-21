@@ -1,0 +1,23 @@
+{
+  "name": "code_challenge_2_21",
+  "version": "1.0.0",
+  "description": " Code Challenge 2.21 -  Given a string of words return the highest scoring word as a string",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "code",
+    "challenge",
+    "highest",
+    "string"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.4.0"
+  }
+}
