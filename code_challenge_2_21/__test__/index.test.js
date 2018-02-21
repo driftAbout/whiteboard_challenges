@@ -12,5 +12,10 @@ describe('solution', () => {
       let str = 'aa bb cc dd';
       expect(solution.highestWord(str)).toEqual('dd');
     });
+
+    it('return highest word', () => {
+      let str = 'chicken gazelle zebra';
+      expect(solution.highestWord(str)).toEqual('gazelle');
+    });
   });
 });
