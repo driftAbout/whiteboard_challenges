@@ -8,8 +8,9 @@ describe('solution', () => {
       expect(solution).toBeDefined();
     });
 
-    it('Test 2: sll exists', () => {
-    // expect( ).toBeDefined();
+    it('return highest word', () => {
+      let str = 'aa bb cc dd';
+      expect(solution.highestWord(str)).toEqual('dd');
     });
   });
 });
