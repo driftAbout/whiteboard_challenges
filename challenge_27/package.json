@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest --verbose -i"
+    "test": "jest --verbose -i",
+    "test:debug": "DEBUG=http* jest --verbose -i"
   },
   "keywords": [
     "array",

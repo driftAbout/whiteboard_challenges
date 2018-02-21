@@ -1,5 +1,4 @@
 'use strict';
 
-const solution = module.exports = {};
-
+const solution = require('./lib/solution');
 
