@@ -4,12 +4,14 @@ const solution = require(`${__dirname}/../index`);
 
 describe('solution', () => {
   describe('valid input', () => {
-    it('Test 1: solution exists', () => {
+    it('solution exists', () => {
       expect(solution).toBeDefined();
     });
 
-    it('Test 2: sll exists', () => {
-    // expect( ).toBeDefined();
+    this.arr = ['acre', 'race', 'care', 'act', 'cat', 'tac'];
+    this.anagrams = solution.anagram_sort(this.arr);
+    it('Should return object of anagrams', () => {
+      expect(Object.keys(this.anagrams)).toEqual(expect.arrayContaining(['acre', 'act']));
     });
   });
 });
