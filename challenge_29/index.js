@@ -3,13 +3,16 @@
 const solution = module.exports = {};
 
 solution.anagram_sort = (arr) => {
-  return Object.values(arr.sort().reduce((acc, word) => {
+  if(!Array.isArray(arr)) throw new Error('Invalid input: expecting array');
+  if(arr.join('').replace(/[aA-Zz]/gi,'')) throw new Error('Invalid input: expecting array of strings');
+  let anagrams = Object.values(arr.sort().reduce((acc, word) => {
     let letters = word.split('').sort().join('');
     if (!acc[letters]) acc[letters] = [] ;
     acc[letters].push(word);
     return acc;
-  },{})).reduce((acc, words) => {
+  },{})).filter(arr => arr.length > 1).reduce((acc, words) => {
     acc[words[0]] = words;
     return acc;
   }, {});
+  return Object.keys(anagrams).length ? anagrams : null;
 };
