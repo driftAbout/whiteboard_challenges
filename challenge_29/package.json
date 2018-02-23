@@ -1,0 +1,25 @@
+{
+  "name": "challenge_29",
+  "version": "1.0.0",
+  "description": "29: Whiteboard Challenge - Write a method to sort an array of strings so that all the anagrams are next to each other",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose -i"
+  },
+  "keywords": [
+    "anagrams",
+    "hash",
+    "table",
+    "reducce",
+    "sort",
+    "objects"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.4.1"
+  }
+}
