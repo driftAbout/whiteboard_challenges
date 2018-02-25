@@ -11,15 +11,15 @@ describe('solution', () => {
     this.arr = ['acre', 'race', 'care', 'act', 'cat', 'tac', 'pat'];
     this.anagrams = solution.anagram_sort(this.arr);
     it('Should return object of anagrams with keys', () => {
-      expect(Object.keys(this.anagrams)).toEqual(expect.arrayContaining(['acre', 'act']));
+      expect(this.anagrams).toEqual(expect.arrayContaining(['acre', 'act']));
     });
 
     it('Should return object of anagrams with keys of words', () => {
-      expect(this.anagrams.acre).toEqual(expect.arrayContaining(['acre', 'race', 'care']));
+      expect(this.anagrams).toEqual(expect.arrayContaining(['acre', 'race', 'care']));
     });
 
     it('Should not contain a property for words that have no anagrams', () => {
-      expect(this.anagrams.pat).toBeUndefined();
+      expect(this.anagrams).not.toEqual(expect.arrayContaining(['pat']));
     });
 
     it('Should return null for arrays that have no anagrams', () => {
