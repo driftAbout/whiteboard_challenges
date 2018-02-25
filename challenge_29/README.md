@@ -1,4 +1,4 @@
-># Whiteboard Challenge 28
+># Whiteboard Challenge 29
 
   ## Problem Domain
   
@@ -8,11 +8,7 @@
 
  ```JAVASCRIPT
     sortAnagrams('acre race care act cat tac') =>
-
-    {
-      acre : {acre, race, care},
-      act: {act, cat, tac},
-    }
+      ['acre', 'care', 'race', 'act', 'cat', 'tac', ]
  ```
 
  
@@ -34,9 +30,9 @@
 
   - Get array of values from object
 
-  - Filter array to remove arrays with only one valiue
+  - Filter array to remove arrays with only one value
 
-  - Create new object with each array as value and item at index 0 as key
+  - Create new array with all the anagrams next to each other
 
 
   ## Tests
