@@ -1,0 +1,25 @@
+{
+  "name": "challenge_04",
+  "version": "0.0.0",
+  "description": "31: Whiteboard Challenge find the intersection between two arrays",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint",
+    "test": "jest"
+  },
+  "keywords": [
+    "intersect",
+    "array",
+    "whiteboard",
+    "challenge"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "jest": "^22.1.3"
+  }
+}
