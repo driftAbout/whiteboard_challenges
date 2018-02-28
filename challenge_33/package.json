@@ -1,0 +1,21 @@
+{
+  "name": "challenge_33",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 33 -  Write a function while takes two arguments, a base number and an exponential, and returns the sum of the return value's digits.",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint .",
+    "test": "jest --verbose -i"
+  },
+  "keywords": [
+    "Math",
+    "pow",
+    "sum"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "jest": "^22.4.2"
+  }
+}
