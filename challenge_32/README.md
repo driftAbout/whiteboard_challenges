@@ -11,7 +11,7 @@
 
   ### Recursive And Fibonacci
 
-  My recursive function is O(n).  I'm not sure why this is not an ideal solution.
+  Even though my recursive function is O(n), it has the potential to cause a stack overflow, depending on the size of n.
 
  
   >## Solution
