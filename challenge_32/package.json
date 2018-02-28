@@ -1,0 +1,26 @@
+{
+  "name": "challenge_32",
+  "version": "1.0.0",
+  "description": "32: Whiteboard Challenge - Write two functions to print out the nth entry in the fibonacci series, recursively and iteratively",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest --verbose -i"
+  },
+  "keywords": [
+    "Fibonacci",
+    "node",
+    "jest",
+    "iterative",
+    "recursive"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "jest": "^22.4.2"
+  }
+}
