@@ -1,0 +1,28 @@
+{
+  "name": "challenge_36",
+  "version": "1.0.0",
+  "description": "36: Whiteboard Challenge - Write a function which takes two binary search trees as arguments, and compares them for structural likeness. If they are structurally identical, return true, else return false.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose -i"
+  },
+  "keywords": [
+    "binary",
+    "search",
+    "trees",
+    "identical",
+    "structures",
+    "node",
+    "jest",
+    "data"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "jest": "^22.4.2"
+  }
+}
