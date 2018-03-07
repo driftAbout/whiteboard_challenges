@@ -1,49 +1,48 @@
-# Whiteboard Challenge 09
+># Whiteboard Challenge 37
 
   ## Problem Domain
   
-  Write a function which accepts n and a linked list as it's arguments, and will return the nth from last node in a linked list
+   Write a function takes a Binary Tree as it's argument and returns a sorted linked list
 
- 
-  ## Solution
+ > ## Solution
 
-  - validate that n is a number and that the linked list is a linked list, if not, return null
+  - Validate that the input is not null nor undefined, throw a type error for invalid input.
 
-  - Set a counter
+  - Validate that the input is a linked list, throw a type error for invalid input.
 
-  - Set a variable as a reference to the head
+  - Return null if the root is null;
 
-  - Loop through the linked list from beginning to end
+  - Traverse the tree and insert index/value pairs into an array.
 
-  - When the counter is greater than n, start iterating from the beginning with the variable
+  - Reverse iterate over Object.keys, inserting the values into a linked list
 
-  - When the loop finishes, the variable witht eh delayed start is now n nodes from the end
-
-  - if the counter is less than n the offset was out of range so return null 
+  - If the array has length return a linked list, otherwise return null.
   
   
-  ## Tests
+  >## Tests
 
   ### ```lib/nd.js``` and ```lib/sll.js``` are used to create test data.
   
   ### Valid input
      
-  - Test should return the nth node as a new linked list.
+  - Validate that it should return a linked list.
  
-  - Test should return the last node when n = 0'
+  - Validate that it should return a linked list with sorted values.
 
+  - Validate that it should return null for a tree that has no values.
 
+  - Validate that it should return a linked list with sorted values, without dupes
 
   ### Invalid input
 
-  - Test should return null when invoked without parameters. 
+  - 
 
-  - Test should return null when n is not a number
+  - Validate that it should throw an error for empty arguments.
 
-  - Test should return null when the linked list is not a linked list
+  - Validate that it should throw an error for an argument that is not a tree.
 
-  - Test should return null when n is less than 0
+  - Validate that it throw an error for an argument that is not a tree.
 
-  - Test should return null when n is out of range of the linked list
+  - Validate that it should return null when n is out of range of the linked list
    
-    
+  - Validate that it should throw an error for an object passed as an argument that is not a tree

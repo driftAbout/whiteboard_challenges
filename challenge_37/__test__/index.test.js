@@ -36,6 +36,19 @@ describe('solution', function(){
     it('Should return a linked list with sorted values', () => {
       expect(this.sortedArray).toEqual([1,2,3,4,5,6,7,8,9,10]);
     });
+
+    it('Should return a linked list with sorted values, with no dupes', () => {
+      this.tree = new BST();
+      [5,5,1,1,9,9,4,4,7,7,3,3,6,6,10,10,8,8,2,2,8].forEach(val => this.tree.insert(val));
+      this.linkedList = solution.sortBinaryTree(this.tree);
+      this.sortedArray = [];
+      let node = this.linkedList.head;
+      while(node){
+        this.sortedArray.push(node.value);
+        node = node.next;
+      }
+      expect(this.sortedArray).toEqual([1,2,3,4,5,6,7,8,9,10]);
+    });
     
     it('Should return null for a tree that has no values', () => {
       expect(solution.sortBinaryTree(new BST())).toBeNull();
@@ -54,7 +67,6 @@ describe('solution', function(){
     it('Should throw an error for an object passed as an argument that is not a tree', () =>{
       expect(() => solution.sortBinaryTree({head: null})).toThrow();
     });
-
   });
 
 });
