@@ -1,0 +1,29 @@
+{
+  "name": "challenge_37",
+  "version": "1.0.0",
+  "description": "Whiteboard Challenge 37 - Write a function takes a Binary Tree as it's argument and returns a sorted linked list.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose -i "
+  },
+  "keywords": [
+    "jest",
+    "binary",
+    "tree",
+    "sort",
+    "linked",
+    "list",
+    "traverse",
+    "data",
+    "structures"
+  ],
+  "author": "Kevin Miller",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^4.18.2",
+    "jest": "^22.4.2"
+  }
+}
